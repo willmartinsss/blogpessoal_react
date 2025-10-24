@@ -1,12 +1,15 @@
-import { useState } from 'react'
 import Home from './home/Home'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
 
 function App() {
-  const [] = useState(0)
-
   return (
-     <Home/>
-  )
+    <>
+      <Navbar />
+      <Home />
+      <Footer />
+    </>
+  );
 }
 
 export default App
