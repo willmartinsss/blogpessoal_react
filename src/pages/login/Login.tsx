@@ -2,53 +2,65 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4">
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuário</label>
-            <input
-              type="text"
-              id="usuario"
-              name="usuario"
-              placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-            />
-          </div>
-          <button
-            type="submit"
-            className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2"
-          >
-            <span>Entrar</span>
-          </button>
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      {/* Formulário de Login */}
+      <form className="flex flex-col justify-center items-center w-3/4 lg:w-1/2 gap-4">
+        <h2 className="text-slate-900 text-5xl font-extrabold">Entrar</h2>
 
-          <hr className="border-slate-800 w-full" />
+        {/* Campo Usuário */}
+        <div className="flex flex-col w-full">
+          <label htmlFor="usuario" className="text-slate-800 mb-1">
+            Usuário
+          </label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            placeholder="Digite seu usuário"
+            className="border-2 border-slate-700 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+        </div>
 
-          <p>
-            Ainda não tem uma conta?{" "}
-            <Link to="/cadastro" className="text-indigo-800 hover:underline">
-              Cadastre-se
-            </Link>
-          </p>
-        </form>
-        <div
-          className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
-                            w-full min-h-screen bg-cover bg-center"
-        ></div>
-      </div>
-    </>
+        {/* Campo Senha */}
+        <div className="flex flex-col w-full">
+          <label htmlFor="senha" className="text-slate-800 mb-1">
+            Senha
+          </label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            className="border-2 border-slate-700 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+        </div>
+
+        {/* Botão Entrar */}
+        <button
+          type="submit"
+          className="rounded bg-indigo-500 hover:bg-indigo-700 transition-colors duration-200 text-white w-1/2 py-2"
+        >
+          Entrar
+        </button>
+
+        {/* Separador */}
+        <hr className="border-slate-800 w-full my-4" />
+
+        {/* Link de Cadastro */}
+        <p className="text-center">
+          Ainda não tem uma conta?{" "}
+          <Link to="/cadastro" className="text-indigo-700 hover:underline">
+            Cadastre-se
+          </Link>
+        </p>
+      </form>
+
+      {/* Imagem lateral */}
+      <div
+        className="hidden lg:block bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] bg-no-repeat bg-cover bg-center w-full h-full"
+        aria-hidden="true"
+      ></div>
+    </div>
   );
 }
 

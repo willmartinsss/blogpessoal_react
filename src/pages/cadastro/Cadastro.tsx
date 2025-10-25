@@ -1,100 +1,117 @@
 import { Link } from "react-router-dom";
 
 function Cadastro() {
-
   return (
-    <>
+    <div className="grid grid-cols-1 lg:grid-cols-2 h-screen font-bold">
+      {/* Lado da imagem */}
       <div
-        className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold"
-      >
-        <div
-          className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] lg:block hidden bg-no-repeat 
-                    w-full min-h-screen bg-cover bg-center"
-        ></div>
-        <form className="flex justify-center items-center flex-col w-2/3 gap-3">
-          <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
+        className="bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] hidden lg:block bg-no-repeat 
+                   bg-cover bg-center w-full min-h-screen"
+      ></div>
+
+      {/* Formulário */}
+      <div className="flex justify-center items-center bg-gray-50">
+        <form className="bg-white shadow-xl rounded-2xl p-10 w-3/4 max-w-md flex flex-col gap-4">
+          <h2 className="text-indigo-800 text-4xl text-center font-extrabold mb-2">
+            Cadastrar
+          </h2>
+
           <div className="flex flex-col w-full">
-            <label htmlFor="nome">Nome</label>
+            <label htmlFor="nome" className="text-gray-700 font-semibold">
+              Nome
+            </label>
             <input
               type="text"
               id="nome"
               name="nome"
-              placeholder="Nome"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Digite seu nome"
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="usuario" className="text-gray-700 font-semibold">
+              Usuário
+            </label>
             <input
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Digite seu usuário"
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+
           <div className="flex flex-col w-full">
-            <label htmlFor="foto">Foto</label>
+            <label htmlFor="foto" className="text-gray-700 font-semibold">
+              Foto
+            </label>
             <input
               type="text"
               id="foto"
               name="foto"
-              placeholder="Foto"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="URL da foto"
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+
           <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+            <label htmlFor="senha" className="text-gray-700 font-semibold">
+              Senha
+            </label>
             <input
               type="password"
               id="senha"
               name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Digite sua senha"
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
+
           <div className="flex flex-col w-full">
-            <label htmlFor="confirmarSenha">Confirmar Senha</label>
+            <label
+              htmlFor="confirmarSenha"
+              className="text-gray-700 font-semibold"
+            >
+              Confirmar Senha
+            </label>
             <input
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
-              placeholder="Confirmar Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              placeholder="Confirme sua senha"
+              className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
-          <div className="flex justify-around w-full gap-8">
+
+          <div className="flex justify-between gap-4 mt-2">
             <button
               type="reset"
-              className="rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2"
+              className="w-1/2 py-2 rounded-lg text-white bg-red-500 hover:bg-red-600 transition font-semibold"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="rounded text-white bg-indigo-400 
-                           hover:bg-indigo-900 w-1/2 py-2
-                           flex justify-center"
+              className="w-1/2 py-2 rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition font-semibold"
             >
               Cadastrar
             </button>
           </div>
-          <button
-            type="reset"
-            className="rounded text-white bg-indigo-500 hover:bg-red-700 w-1/2 py-2"
-          >
-            <p>
-              Ja tem uma conta? Clique aqui para logar!{""}
-              <Link to="/login" className="text-indigo-800 hover:underline">
-                Logar-Se
-              </Link>
-            </p>
-          </button>
+
+          <p className="text-center text-sm text-gray-700 mt-4">
+            Já tem uma conta?{" "}
+            <Link
+              to="/login"
+              className="text-indigo-600 hover:underline font-semibold"
+            >
+              Logar-se
+            </Link>
+          </p>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
-export default Cadastro
+export default Cadastro;
