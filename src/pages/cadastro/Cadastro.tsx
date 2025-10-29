@@ -192,7 +192,7 @@ function Cadastro() {
           <p className="text-center text-sm text-gray-700 mt-4">
             Já tem uma conta?{" "}
             <Link
-              to="/login"
+              to="/"
               className="text-indigo-600 hover:underline font-semibold"
             >
               Logar-se
