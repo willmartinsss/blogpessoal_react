@@ -44,7 +44,9 @@ function Login() {
         className="flex flex-col justify-center items-center w-3/4 lg:w-1/2 gap-4"
         onSubmit={login}
       >
-        <h2 className="text-slate-900 text-5xl font-extrabold">Entrar</h2>
+        <h2 className="text-indigo-800 text-4xl text-center font-extrabold mb-2">
+          Entrar
+        </h2>
 
         {/* Campo Usuário */}
         <div className="flex flex-col w-full">
@@ -56,7 +58,7 @@ function Login() {
             id="usuario"
             name="usuario"
             placeholder="Digite seu usuário"
-            className="border-2 border-slate-700 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={usuarioLogin.usuario}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
@@ -72,7 +74,7 @@ function Login() {
             id="senha"
             name="senha"
             placeholder="Digite sua senha"
-            className="border-2 border-slate-700 rounded p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             value={usuarioLogin.senha}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
@@ -83,13 +85,11 @@ function Login() {
           type="submit"
           className="rounded bg-indigo-500 hover:bg-indigo-700 transition-colors duration-200 text-white w-1/2 py-2"
         >
-          {isLoading ?
-            <ClipLoader
-              color="#ffffff"
-              size={24}
-            /> :
+          {isLoading ? (
+            <ClipLoader color="#ffffff" size={24} />
+          ) : (
             <span> Entrar</span>
-          }
+          )}
         </button>
 
         {/* Separador */}
