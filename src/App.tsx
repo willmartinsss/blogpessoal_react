@@ -1,16 +1,18 @@
-import Home from './pages/home/Home'
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Cadastro from './pages/cadastro/Cadastro';
-import Login from './pages/login/Login';
-import { AuthProvider } from './contexts/AuthContext';
-import ListaTemas from './components/tema/listatemas/ListarTemas';
-import FormTema from './components/tema/formtema/FormTema';
-import DeletarTema from './components/tema/deletartema/DeletarTema';
-import ListaPostagens from './components/postagem/listapostagens/ListaPostagem';
-import FormPostagem from './components/postagem/formpostagem/FormPostagem';
-import DeletarPostagem from './components/postagem/deletarpostagem/DeletarPostagem';
+import Home from "./pages/home/Home";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cadastro from "./pages/cadastro/Cadastro";
+import Login from "./pages/login/Login";
+import { AuthProvider } from "./contexts/AuthContext";
+import ListaTemas from "./components/tema/listatemas/ListarTemas";
+import FormTema from "./components/tema/formtema/FormTema";
+import DeletarTema from "./components/tema/deletartema/DeletarTema";
+import ListaPostagens from "./components/postagem/listapostagens/ListaPostagem";
+import FormPostagem from "./components/postagem/formpostagem/FormPostagem";
+import DeletarPostagem from "./components/postagem/deletarpostagem/DeletarPostagem";
+import Perfil from "./pages/perfil/Perfil";
+// import EditarPerfil from "./pages/editarperfil/EditarPerfil";
 
 function App() {
   return (
@@ -30,7 +32,12 @@ function App() {
               <Route path="/postagens" element={<ListaPostagens />} />
               <Route path="/cadastrarpostagem" element={<FormPostagem />} />
               <Route path="/editarpostagem/:id" element={<FormPostagem />} />
-              <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
+              <Route
+                path="/deletarpostagem/:id"
+                element={<DeletarPostagem />}
+              />
+              <Route path="/perfil" element={<Perfil />} />
+              {/* <Route path="/editar-perfil" element={<EditarPerfil />} /> */}
             </Routes>
           </div>
           <Footer />
@@ -40,4 +47,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
